@@ -12,13 +12,10 @@ app.get('/user/:id', (req, res) => {
 
 - POST
 ```javascript
-app.addContentTypeParser('*', (req, done) => {
-    let data = ''
-    req.on('data', chunk => { data += chunk })
-    req.on('end', () => {
-        done(data)
-    })
-})
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
 /*
 body object (application/json)
@@ -42,13 +39,10 @@ app.post('/user', (req, res) => {
 
 - PUT
 ```javascript
-app.addContentTypeParser('*', (req, done) => {
-    let data = ''
-    req.on('data', chunk => { data += chunk })
-    req.on('end', () => {
-        done(data)
-    })
-})
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
 /*
 body object (application/json)
