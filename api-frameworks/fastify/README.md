@@ -20,7 +20,8 @@ fastify.addContentTypeParser('*', (req, done) => {
     })
 })
 
-/*body object (application/json)
+/*
+body object (application/json)
 Nativamente o Fastify suporta apenas o tipo de conteúdo application/json
 Natively, Fastify only supports the 'application/json' content type
 {
@@ -49,7 +50,8 @@ fastify.addContentTypeParser('*', (req, done) => {
     })
 })
 
-/*body object (application/json)
+/*
+body object (application/json)
 Nativamente o Fastify suporta apenas o tipo de conteúdo application/json
 Natively, Fastify only supports the 'application/json' content type
 {
