@@ -2,17 +2,17 @@
 
 - GET
 ```javascript
-fastify.get('/user/:id', (req, reply) => {
+app.get('/user/:id', (req, res) => {
     db.get(req.params.id, (err, user) => {
 
-        reply.code(200).send({ user })
+        res.status(200).send({ user })
     })
 })
 ```
 
 - POST
 ```javascript
-fastify.addContentTypeParser('*', (req, done) => {
+app.addContentTypeParser('*', (req, done) => {
     let data = ''
     req.on('data', chunk => { data += chunk })
     req.on('end', () => {
@@ -22,27 +22,27 @@ fastify.addContentTypeParser('*', (req, done) => {
 
 /*
 body object (application/json)
-Nativamente o Fastify suporta apenas o tipo de conteúdo application/json
-Natively, Fastify only supports the 'application/json' content type
+Para manipularmos o objeto, é necessário configurarmos o body-parser no nosso aplicativo
+To manipulate the object, it is necessary to configure the body-parser in our application
 {
     "name": "Igor Souza Martins",
     "login": "nulldreams@gmail.com",
     "password": "1234"
 }
 */
-fastify.post('/user', (req, reply) => {
+app.post('/user', (req, res) => {
     let body = req.body
 
     db.add(body, (err, user) => {
 
-        reply.code(200).send({ user })
+        res.status(200).send({ user })
     })
 })
 ```
 
 - PUT
 ```javascript
-fastify.addContentTypeParser('*', (req, done) => {
+app.addContentTypeParser('*', (req, done) => {
     let data = ''
     req.on('data', chunk => { data += chunk })
     req.on('end', () => {
@@ -52,10 +52,10 @@ fastify.addContentTypeParser('*', (req, done) => {
 
 /*
 body object (application/json)
-Nativamente o Fastify suporta apenas o tipo de conteúdo application/json
-Natively, Fastify only supports the 'application/json' content type
+Para manipularmos o objeto, é necessário configurarmos o body-parser no nosso aplicativo
+To manipulate the object, it is necessary to configure the body-parser in our application
 {
-	"id": "FBjZokYaIzlEohsq",
+	"id": "0jEZZ6waOy35YfOk",
 	"user": {
 		"name": "Igor Souza Martins",
 		"login": "nulldreams@gmail.com",
@@ -63,22 +63,22 @@ Natively, Fastify only supports the 'application/json' content type
 	}
 }
 */
-fastify.put('/user', (req, reply) => {
+app.put('/user', (req, res) => {
     let body = req.body
 
     db.update(body, (err, user) => {
 
-        reply.code(200).send({ user })
+        res.status(200).send({ user })
     })
 })
 ```
 
 - DELETE
 ```javascript
-fastify.delete('/user/:id', (req, reply) => {
+app.delete('/user/:id', (req, res) => {
     db.remove(req.params.id, (err, removed) => {
 
-        reply.code(200).send({ removed })
+        res.status(200).send({ removed })
     })
 })
 ```
