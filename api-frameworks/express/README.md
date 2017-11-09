@@ -1,5 +1,17 @@
 # Examples
 
+- Initialize
+```javascript
+const app = require('express')()
+const port = process.env.PORT || 5000
+
+app.listen(port, (err) => {
+  if (err) throw err
+
+  console.log(`server listening on http://localhost:${port}`)
+})
+```
+
 - GET
 ```javascript
 app.get('/user/:id', (req, res) => {
