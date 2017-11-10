@@ -1,5 +1,7 @@
 # [Vorpal](https://github.com/dthree/vorpal)
 
+[![asciicast](https://asciinema.org/a/msQHFAHws8VGk4HkSOhduHZAQ.png)](https://asciinema.org/a/msQHFAHws8VGk4HkSOhduHZAQ)
+
 ## Examples
 
 - Creating new command
