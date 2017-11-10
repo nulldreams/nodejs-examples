@@ -1,7 +1,5 @@
 # [Vorpal](https://github.com/dthree/vorpal)
 
-[![asciicast](https://asciinema.org/a/msQHFAHws8VGk4HkSOhduHZAQ.png)](https://asciinema.org/a/msQHFAHws8VGk4HkSOhduHZAQ)
-
 ## Examples
 
 - Creating new command
@@ -32,3 +30,5 @@ vorpal.log('Hello darkness my old friend')
 ```javascript
 vorpal.show()
 ```
+
+[![asciicast](https://asciinema.org/a/msQHFAHws8VGk4HkSOhduHZAQ.png)](https://asciinema.org/a/msQHFAHws8VGk4HkSOhduHZAQ)
